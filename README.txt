@@ -1,15 +1,17 @@
+To run application you need to have the required dependencies: Spring Framework
+
 ---------Java Spring--------
 Topics covered in this tutorial application
 
 
 JavaBeanFactory
 XMLBeanFactory
-Xml Bean ìPropertyî
+Xml Bean ‚ÄúProperty‚Äù
 Property Initialization
 ApplicationContext
-SetterInjection ì<property></property> XML tag
+SetterInjection ‚Äú<property></property> XML tag
 ConstructorInjection <constructor-arg></constructor-arg>
-Index based constructor assignment ìindex=î0î etc.
+Index based constructor assignment ‚Äúindex=‚Äù0‚Äù etc.
 Object Injection
 Inner beans
 Alias
@@ -23,32 +25,32 @@ Web-aware Context Bean Scopes
 Request Scope (New Bean per servlet request)
 Session Scope (new bean per session)
 Global session ( new bean per global HTTP session (portlet context))
-ApplicationContextAware - Spring calls ìsetApplicationContextî and sets the application context to the variable ìcontextî within a bean class.
+ApplicationContextAware - Spring calls ‚ÄúsetApplicationContext‚Äù and sets the application context to the variable ‚Äúcontext‚Äù within a bean class.
 Bean Definition Inheritance
 A Bean definition can be created, one that can be instantiated or one that is abstract and serves as a template for other beans to inherit from
-Inherit bean definition via parameter ìparent=î to subsequent beans that you wish to inherit the parent bean definition
-When inheriting a list from a bean definition configuring the parameter ìlist merge=trueî will not override the list definition but instead add to the inherited list argument
-Configuring a parameter in the bean definition ìabstract=trueî will not instantiate an instance of that bean but instead be used as an abstract bean to be inherited by child bean classes
+Inherit bean definition via parameter ‚Äúparent=‚Äù to subsequent beans that you wish to inherit the parent bean definition
+When inheriting a list from a bean definition configuring the parameter ‚Äúlist merge=true‚Äù will not override the list definition but instead add to the inherited list argument
+Configuring a parameter in the bean definition ‚Äúabstract=true‚Äù will not instantiate an instance of that bean but instead be used as an abstract bean to be inherited by child bean classes
 Lifecycle Callback methods
 Methods that can be run when a bean is created and when it is destroyed
-ìInitializationBeanî interface, let the bean know when it is created and to run a method ìafterPropertiesSetî
-ìDisposableBean interface, complete some action when the bean is destroyed
-XML parameters ìinit-methodî and ìdestroy-methodî are methods that are called upon creation and destroy of an object that is not tied to Spring itself
+‚ÄúInitializationBean‚Äù interface, let the bean know when it is created and to run a method ‚ÄúafterPropertiesSet‚Äù
+‚ÄúDisposableBean interface, complete some action when the bean is destroyed
+XML parameters ‚Äúinit-method‚Äù and ‚Äúdestroy-method‚Äù are methods that are called upon creation and destroy of an object that is not tied to Spring itself
 BeanPostProcessor runs code for every instantiated bean and its dependencies upon instantiation and after instantiation
 The BeanPostProcessor must be declared within the XML configuration file in order to be recognized by the Spring Framework
 Properties placeholders
 Config.properties file
-Reference the values from the config file using conventions ì${classname.membervariable}î and refer the them the same way in the config file
+Reference the values from the config file using conventions ‚Äú${classname.membervariable}‚Äù and refer the them the same way in the config file
 Coding to interfaces
-By applying interfaces to objects you can override the methods within that interface and interchange specific configurations of the inherited method(s) within the same calling method in your spring structure. For example, by applying an interface ìShapeî with a method ìdrawî, any configurations of a shape that you create, such as triangle or circle, the same method that calls a ìshapeî object to draw will use the definition of ìdrawî from child methods that inherit from the parent class. A call to a triangle object that implements shape will draw a 3 sided shape while a circle object that implements shape will draw a circle.
-@Required annotation. Using the spring frameworks RequiredAnnotationBeanPostProcessor you may verify that initialization of member variables for beans are indeed instantiated when the bean factory initializes objects within the factory. A error is thrown if a member variable has not been initialized, which helps to verify that an objectís dependencies have been properly initialized, preventing a runtime exception later down the line.
+By applying interfaces to objects you can override the methods within that interface and interchange specific configurations of the inherited method(s) within the same calling method in your spring structure. For example, by applying an interface ‚ÄúShape‚Äù with a method ‚Äúdraw‚Äù, any configurations of a shape that you create, such as triangle or circle, the same method that calls a ‚Äúshape‚Äù object to draw will use the definition of ‚Äúdraw‚Äù from child methods that inherit from the parent class. A call to a triangle object that implements shape will draw a 3 sided shape while a circle object that implements shape will draw a circle.
+@Required annotation. Using the spring frameworks RequiredAnnotationBeanPostProcessor you may verify that initialization of member variables for beans are indeed instantiated when the bean factory initializes objects within the factory. A error is thrown if a member variable has not been initialized, which helps to verify that an object‚Äôs dependencies have been properly initialized, preventing a runtime exception later down the line.
 Autowired annotation (AutowiredAnnotationBeanPostProcessor)
 First looks for unique bean fitting the required type of the method, second it will look for the name of the bean that matches the member variable being set.
 Qualifer, something that can be mentioned in the bean definition to relate a bean with an object
 Providing a qualifier annotation to a class method will help the framework detect what beans should be autowired with a specific object
 XML namespaces must be configured in the spring.xml
 The <context:annotation-config> tag will automatically take care of all AnnotationBeanPostProcessors
-JSR250 ìJava Specification Requestî standard annotations that apply over different technologies and frameworks
+JSR250 ‚ÄúJava Specification Request‚Äù standard annotations that apply over different technologies and frameworks
 @Resource, standard annotation that is defined in the javax package which provides dependency injection by name, if no name is provided it will check for a dependency by the name of the member variable being assigned, similar to autowired
 Annotations, PostConstruct and PreDestroy are similar to beaninitialize and beandestroy interfaces. Specify initialization and destruction methods of beans
 The @Component tag associated with the Spring Framework is essentially equivalent to the xml configuration of a class bean
